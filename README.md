@@ -1,6 +1,7 @@
 # Advserarial Image Analysis
 ## Todo:
-    Regression Implementation [x]
+    Adversarial Image Generation via Regression [x]
+    Regression Training Optimizaion w/ Adversarial Image Generation [ ]
     Confidence Calculation [ ]
     Convnet Implementation [ ]
     
@@ -28,4 +29,7 @@ Serveral obvious points of interests are demonstrated in the process.
 - Delta becomes more significant as alpha increases. This is intuitive and expected as delta is scaled by alpha
 - The number of adversarial images generated increases as alpha increases
 - Changes in the resulting adversarial images are increasingly significant as alpha increases
+
+Desptite changes, the correct classifications for adversarial images under human eye are still clearly their original classes. Thus, it is very possible to use these examples to retrain the model in order to decrease overfitting.
+
 

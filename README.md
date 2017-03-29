@@ -20,6 +20,7 @@ The generation process is as follows:
 An spectrum of alpha values were used to scale delta to demonstrate its effect on number of instances affect by the shift as well as the post-shift image.
 
 ![alpha500](https://image.ibb.co/iKjKyv/figure_1.png)
+
 The respective alpha values of each figure is annotated above each figure.
 For alpha=200 and 300, the adversarial iamge generator was not able to generate up to 10 adversarial images.
 

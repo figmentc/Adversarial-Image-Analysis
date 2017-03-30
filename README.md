@@ -37,7 +37,7 @@ Despite shifting, the correct classifications for adversarial images under human
 Methods are largely the same as for the regression model. However trained, optimized, and delta calculated with a ConvNet model. 
 Similary to the generating process used for regression, an array of alpha values were used to scale the gradient. 
 
-![alpha500](:http://imgur.com/f5127c9d-403e-498e-8772-3658ca5a14bf)
+![alpha500](http://imgur.com/f5127c9d-403e-498e-8772-3658ca5a14bf)
 
 Several interesting pieces of result came to attention:
 - Convnet required a higher alpha value to scale the delta in order to generate 10 adversarial images. Alpha at 200 and 300 were unable to generate any adversarial examples. 

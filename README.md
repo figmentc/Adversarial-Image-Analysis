@@ -1,4 +1,9 @@
 # Advserarial Image Analysis
+## Instructions:
+- Run: RegressionAdversarialGenerator.py to generate results for Logistic Regression Analysis
+- Run: ConvNetAdversialGenerator.py to generate results for ConvNet Analysis
+Note: Not all figure will be generated automatically, will minor changes to hyper parameters to acquire all models. Follow instructions in the respective section.
+
 ## Todo:
     Adversarial Image Generation via Regression [x]
     Convnet Implementation [X]
@@ -54,7 +59,7 @@ What if we dont use Dropout to regularize our cost function? (keep_prob set to 1
 
 ![convnet](https://image.ibb.co/mDh3rF/conv_Net_No_Reg.png)
 
-We see a increase in the number of generated images. Once again, overfitting-prevention techniques also decrease the ease of adversarial image generation. 
+We see a increase in the number of generated images. Once again, overfitting-prevention techniques decreases the ease of adversarial image generation. 
 
 ## Overall Analysis 
 - Adversarial image generation can be done with ease through back propagation

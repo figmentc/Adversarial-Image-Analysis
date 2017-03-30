@@ -32,11 +32,12 @@ Serveral obvious points of interests are demonstrated in the process.
 
 Despite shifting, the correct classifications for adversarial images under human eye are still clearly their original classes. Thus, it is very possible to use these examples to retrain the model in order to decrease overfitting.
 
-It is theorized that adversarial examples exists due to overfitting. To simulate the effect of overfitting, the number of iterations for gradient descent is increased to 20,000. This is the result:
+It is speculated that adversarial examples at this level of obviousness exists due to overfitting. To simulate the effect of overfitting, the number of iterations for gradient descent is increased to 20,000. This is the result:
 ![alpha500](https://image.ibb.co/i2wk5a/regre20000.png)
 Some observationsL:
 - Number of adversarial images generated increased 
-- Loss of "blackness" more significant due 
+- Gradient is more obvious due to overfitting
+- Loss of "blackness" more significant due to increase in gradient
 
 ## ConvNet Analysis
 ### Methods and Results

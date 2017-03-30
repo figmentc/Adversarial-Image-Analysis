@@ -56,4 +56,7 @@ What if we dont use Dropout to regularize our cost function? (keep_prob set to 1
 
 We see a increase in the number of generated images. Once again, overfitting-prevention techniques also decrease the ease of adversarial image generation. 
 
-
+## Overall Analysis 
+- Adversarial image generation can be done with ease through back propagation
+- The ease of which adversarial images are generated is inversely correlated with regularization and other overfitting prevention techniques
+- Despite a higher accuracy rate, the ConvNet model demonstrated stronger resistence to adverserial images than its regression counterpart

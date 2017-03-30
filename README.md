@@ -8,8 +8,8 @@
 ### Introdution and Methods
 Adversarial generation is implemented on a simple logistic regression model via Tensorflow and the MNIST dataset.
 The generating process is conducted in a directed manner, targetting changing input labeleld '2' to be classified as '6'. 
-The generation process is as follows
-1. Train logistic regression model and save weights
+The generation process is as follows.
+1. Train logistic regression model and save weights. Step Size = 0.5, Iters = 5000. 
 2. Generate boolean mask for correctly classified instances of label '2'
 3. Calculate delta by as (alpha) * (gradient of modified cost function over input)
 3. Shift input vector towards the label '6' by delta
@@ -31,6 +31,12 @@ Serveral obvious points of interests are demonstrated in the process.
 - Overall images lost "blackness" as alpha increased. Due to the increased absolute value of negative delta values which sets the lower limit for blackness. 
 
 Despite shifting, the correct classifications for adversarial images under human eye are still clearly their original classes. Thus, it is very possible to use these examples to retrain the model in order to decrease overfitting.
+
+It is theorized that adversarial examples exists due to overfitting. To simulate the effect of overfitting, the number of iterations for gradient descent is increased to 20,000. This is the result:
+![alpha500](https://image.ibb.co/i2wk5a/regre20000.png)
+Some observationsL:
+- Number of adversarial images generated increased 
+- Loss of "blackness" more significant due 
 
 ## ConvNet Analysis
 ### Methods and Results

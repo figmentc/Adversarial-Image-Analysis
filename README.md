@@ -54,6 +54,6 @@ What if we dont use Dropout to regularize our cost function? (keep_prob set to 1
 
 ![convnet](https://image.ibb.co/mDh3rF/conv_Net_No_Reg.png)
 
-WE see a increase in the number of generated images. Once again, overfitting-prevention techniques also decrease the ease of adversarial image generation. 
+We see a increase in the number of generated images. Once again, overfitting-prevention techniques also decrease the ease of adversarial image generation. 
 
 

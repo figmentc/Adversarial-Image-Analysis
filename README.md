@@ -8,13 +8,13 @@
 ### Introdution and Methods
 Adversarial generation is implemented on a simple logistic regression model via Tensorflow and the MNIST dataset.
 The generating process is conducted in a directed manner, targetting changing input labeleld '2' to be classified as '6'. 
-The generation process is as follows:
-    1. Train logistic regression model and save weights
-    2. Generate boolean mask for correctly classified instances of label '2'
-    3. Calculate delta by as (alpha) * (gradient of modified cost function over input)
-    3. Shift input vector towards the label '6' by delta
-    4. Generate boolean mask for classified instances of label '6' post shift of input
-    5. Screen concatenated input (input,delta,postshift_input) both boolean masks to generate adversarial images
+The generation process is as follows
+1. Train logistic regression model and save weights
+2. Generate boolean mask for correctly classified instances of label '2'
+3. Calculate delta by as (alpha) * (gradient of modified cost function over input)
+3. Shift input vector towards the label '6' by delta
+4. Generate boolean mask for classified instances of label '6' post shift of input
+5. Screen concatenated input (input,delta,postshift_input) both boolean masks to generate adversarial images
 
 ### Results
 An spectrum of alpha values were used to scale delta to demonstrate its effect on number of instances affect by the shift as well as the post-shift image.

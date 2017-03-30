@@ -50,5 +50,10 @@ Several interesting pieces of result came to attention:
 - Convnet required a higher alpha value to scale the delta in order to generate 10 adversarial images. Alpha at 200 and 300 were unable to generate any adversarial examples. 
 - By eye, the delta images are significantly more obvious. When comparing alpha=700 from the ConvNet figure and alpha=300 from the Regression figure, the ConvNet generating process was only able to produce 4 examples compared to 5 by Regression. Yet, the delta values for the ConvNet model is much more significant. In other words, the ConvNet model required a higher delta to generate even less adversarial images. 
 - The "blackness" of the figures degraded much more for the ConvNet model. Which means that the gradient is more extreme. 
+What if we dont use Dropout to regularize our cost function? (keep_prob set to 1.0 for dropout)
+
+![convnet](https://image.ibb.co/mDh3rF/conv_Net_No_Reg.png)
+
+WE see a increase in the number of generated images. Once again, overfitting-prevention techniques also decrease the ease of adversarial image generation. 
 
 

@@ -97,12 +97,18 @@ def build_results(alpha):
     filtered_result = sess.run(filtered, feed_dict={})
 
     # Reshape filtered_result to generate image from pixels
-    shaped_filtered_result =  reshape(filtered_result, (filtered_result.shape[0]*28, 28*3))[:10*28]
+    shaped_filtered_result =  reshape(filtered_result, (filtered_result.shape[0]*28, 28*3))
     
-    plt.imshow(shaped_filtered_result, cmap='gray')
+    return shaped_filtered_result
+
+    def generate_graph():
+    alphas = [200, 300, 400, 700, 1000, 1500]
+    f, axarr = plt.subplots(ncols=len(alphas))
+    for i in range(len(alphas)):
+        axarr[i].imshow(build_results(alphas[i])[:10*28], cmap="gray")
+        axarr[i].axis("off")
+        axarr[i].set_title(alphas[i])
     plt.show()
+
+
     
-    return filtered_result.shape[0]
-    
-if __name__ == __main__:
-    print(build_results(results(500)))

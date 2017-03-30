@@ -7,7 +7,7 @@ import tensorflow as tf
 sess = tf.InteractiveSession()
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
-### Google Tensorflow MNIST Sample Code 
+### Google Tensorflow Sample Code 
 
 # Input Placeholders
 x = tf.placeholder(tf.float32, shape=[None, 784])
@@ -21,7 +21,8 @@ sess.run(tf.global_variables_initializer())
 # Output
 y = tf.matmul(x,W) + b
 
-# Loss Function
+# Loss Functions
+
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y, labels=y_))
 
 #Accuracy Calc
@@ -31,18 +32,18 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 # Training
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
-for i in range(30000):
+for i in range(20000):
   batch = mnist.train.next_batch(100)
   train_step.run(feed_dict={x: batch[0], y_: batch[1]})
   
-  # Uncomment to get Training Set Accuracy
+  # Uncomment to get Training Set Accuracy every 500 iters
   
-  if i%2000==0:
-    print(accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
-print(accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
+  # if i%500==0:
+  #   print(accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
 
 
-### Adversarial Image Generator
+
+### Adversarial Image Analysis
 
 # Returns the tiled onehot ouput of classification pos from 0-9
 # int -> numpy array
@@ -82,7 +83,7 @@ def postshift_6_mask(alpha):
 
 # Output the first 10 input under label '2' classified as '6' due to the adversarial shift
 # Returns the total number of input affected by adversarial shift (2 -> 6)
-# int -> float32 tensor
+# int -> int
 def build_results(alpha):
     # Concatenate all original input, delta, and postshift_input
     delta = reshape(calculate_delta(alpha), (mnist.test.num_examples, 28,28))
@@ -108,30 +109,6 @@ def generate_graph():
         axarr[i].axis("off")
         axarr[i].set_title(alphas[i])
     plt.show()
-    
-    
+
+
 generate_graph()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

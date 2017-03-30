@@ -138,3 +138,4 @@ def generate_graph():
         axarr[i].axis("off")
         axarr[i].set_title(alphas[i])
     plt.show()
+    
